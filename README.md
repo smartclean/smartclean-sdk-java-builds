@@ -22,7 +22,7 @@ The following image best describes the dependency structure of the SDK as a whol
 
 ## Steps to integrate
 Following steps can be followed to integrate the SDK to a maven project:
-- download the sdk jar file from the build folder in this repository.
+- download the sdk jar file from the releases section of this repository.
 - open command window on your system and run the following command:-
 > replace <path-to-jar-file> with the path of the jar file in your system, replace <group-id> with 'org.smartclean', replace <artifact-id> with 'smartclean-java-sdk', replace <version  with '1b' & replace <packaging with 'jar'.
 ```
