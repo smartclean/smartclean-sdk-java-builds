@@ -3,6 +3,9 @@
 ## Introduction
 This is a fully integrated java SDK to facilitate a client with access to all the features and reporting tools for various modules hosted over the SmartClean console.
 
+## Java Docs
+The page is hosted here - https://www.docs.smartclean.io/smartclean-sdk-java-builds/site/apidocs/index.html
+
 ## Modules
 The SDK consists of the following modules:
 - wfm (Work-Force Management)
