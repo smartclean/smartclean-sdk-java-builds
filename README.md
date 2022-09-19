@@ -27,7 +27,7 @@ The following image best describes the dependency structure of the SDK as a whol
 Following steps can be followed to integrate the SDK to a maven project:
 - download the sdk jar file from the releases section of this repository.
 - open command window on your system and run the following command:-
-> replace <path-to-jar-file> with the path of the jar file in your system, replace <group-id> with 'org.smartclean', replace <artifact-id> with 'smartclean-java-sdk', replace <version  with '1b' & replace <packaging with 'jar'.
+> replace <path-to-jar-file> with the path of the jar file in your system, replace <group-id> with 'org.smartclean', replace <artifact-id> with 'smartclean-java-sdk', replace <version  with the sdk version & replace <packaging with 'jar'.
 ```
 mvn install:install-file \
    -Dfile=<path-to-jar-file> \
@@ -46,7 +46,7 @@ mvn install:install-file \
     <dependency>
         <groupId>org.smartclean</groupId>
         <artifactId>smartclean-java-sdk</artifactId>
-        <version>1b</version>
+        <version>${sdk-version}</version>
     </dependency>
 ```
 - place sdk-config.yml & sc-tenants.yml in the root directory of the project. The directory structure of the project should look like this:-
@@ -66,6 +66,8 @@ is set as `local` in the environment variables. Following environment variables 
     MODULE_URL_HOST, //default https://www.smartclean.io/matrix/utils/modules/moduleversions.json
     STALE_CACHE_THRESHOLD, //default 900
     CACHE_CLEANUP_FREQUENCY, //default 600
+    AUTHENTICATION_TYPE, // HMAC OR FEDERATED; default HMAC
+    APPLICATION_ID, // to be defined in case AUTHENTICATION_TYPE is set to FEDERATED
     PROTOCOL, // http OR https
     SC_WFM_HOST,
     SC_WFM_PORT,
