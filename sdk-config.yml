@@ -1,0 +1,57 @@
+# config values for main sdk module
+sdk-config:
+  # set to true to sign the API calls with Authorization key, to skip signing, set it to false.
+  enable-signing: true
+  # sdk can be configured to run in production environment or local environment. while running in production env it will read the latest module URL set from the CDN hosted URI whereas, while running in the local env it will read the module level config local-config defined here.
+  mode: production
+  # module-url-host is used to request the base urls for latest versions of individual modules
+  module-url-host: https://www.smartclean.io/matrix/utils/modules/moduleversions.json
+# config values for sdk-auth module
+sdk-auth-config:
+  # stale cache threshold is the duration in seconds after which an unused tenant credential is removed from the application cache. by default sdk uses 900 seconds
+  stale-cache-threshold: '900'
+  # cache cleanup frequency is the time duration in seconds after which the application perform its scheduled cache cleanup task. by default sdk uses 600 seconds
+  cache-cleanup-frequency: '600'
+  # application-id is used as an identifier for authentication/authorization purpose and is sent to the SmartClean server while making api calls in the headers part
+  application-id: abdc
+  # authorization-type is used to tell the SDK from where it has to pick the authentication token to be passed in the headers along with the API calls. HMAC; FEDERATED. by default its HMAC;
+  authorization-type: HMAC
+#config values for sdk-wfm module
+sdk-wfm-config:
+#config values for sdk-globalUtils module
+sdk-globalUtil-config:
+#config values for sdk-metrics module
+sdk-metrics-config:
+#config values for sdk-grids module
+sdk-grids-config:
+#config values for sdk-devicemanagement module
+sdk-devicemanagement-config:
+# config values for sdk-teamsprop module
+sdk-teamsprop-config:
+
+# below configs are expected and used when the sdk is configured to run in the local or dev environment. These values will be picked up by the SDK if the 'mode' is set to 'local'. Below configs allow defining the endpoints for individual module.
+local-config:
+  # HTTP request protocol can be 'http' OR 'https'. URL without path param format ===>   <protocol>://<host>:<port>/<version>/actions OR <protocol>://<host>/<version>/actions
+  protocol: http
+  services:
+    # service names must be same as the corresponding module name
+#    scworkforcemanagement:
+#      host: localhost
+#      port: 8081
+#      version: v1
+#    scgrids:
+#      host:
+#      port:
+#      version:
+#    scdevicemanagement:
+#      host:
+#      port:
+#      version:
+#    scmetrics:
+#      host:
+#      port:
+#      version:
+    scteamsprop:
+      host: localhost
+      port: 8080
+      version: v1

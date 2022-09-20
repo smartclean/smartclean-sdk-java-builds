@@ -1,0 +1,7 @@
+tenants:
+  <propid-1>:
+    sc_access_key: <sc_access_key_1>
+    sc_secret_key: <sc_secret_key_1>
+  <propid-2>:
+    sc_access_key: <sc_access_key_2>
+    sc_secret_key: <sc_secret_key_2>
