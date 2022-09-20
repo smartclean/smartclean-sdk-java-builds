@@ -103,6 +103,9 @@ public class ScsdkClientAppApplication {
 	public static void main(String[] args) throws JsonProcessingException {
 		clientInterface = new SCSDKMasterService();
 		
+		// while using the FEDERATED authorization mode this would be the right place to set the JWT token.
+		//clientInterface.setFederateJWTToken("xyz");
+		
 		// WFMMainRequestObject is the master object to structure the request body required for making api calls to the operations provided under the workforcemanagement module
 		WFMMainRequestObject mrq = RequestObject.WFM.getShiftDetailsRequestObject("06f98e0c4f464b84b9157b1df6adfa66_003","a0801fe3-40f7-4127-abc0-fa6d58cbcebf");
 		
@@ -182,7 +185,10 @@ public class ClientApplicationConfiguration {
     // Main sdk interface defined as bean to be autowired in the application whereever required
     @Bean
     public SCSDKClientInterface scSDKClientInterface() {
-        return new SCSDKMasterService();
+        SCSDKClientInterface interface = new SCSDKMasterService();
+        // while using the FEDERATED authorization mode this would be the right place to set the JWT token.
+		//interface.setFederateJWTToken("xyz");
+        return interface;
     }
 }
 ```
